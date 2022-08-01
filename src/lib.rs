@@ -17,7 +17,11 @@ pub fn greeting(name: &str) -> String {
 #[test]
 fn greeting_contains_name() {
     let results = greeting("Ndeta");
-    assert!(results.contains("Ndeta"));
+    assert!(
+        results.contains("Ndea"),
+        "greeting did not contain name, value was `{}`",
+        results
+    );
 }
 #[cfg(test)]
 mod tests {
