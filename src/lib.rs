@@ -21,7 +21,20 @@ mod tests {
             width: 5,
             height: 1,
         };
+        // Testing that a larger rectangle can hold a smaller rectangle, test will pass
         assert!(larger.can_hold(&smaller));
+    }
+    #[test]
+    fn smaller_can_hold_larger() {
+        let larger = Rectangle {
+            width: 9,
+            height: 7,
+        };
+        let smaller = Rectangle {
+            width: 5,
+            height: 1,
+        };
+        assert!(smaller.can_hold(&larger));
     }
     #[test]
     fn it_works() {
