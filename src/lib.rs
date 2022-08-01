@@ -34,7 +34,7 @@ mod tests {
             width: 5,
             height: 1,
         };
-        assert!(smaller.can_hold(&larger));
+        assert!(!smaller.can_hold(&larger));
     }
     #[test]
     fn it_works() {
