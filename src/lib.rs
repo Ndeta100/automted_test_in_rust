@@ -8,6 +8,9 @@ impl Rectangle {
         self.width > other.width && self.height > other.width
     }
 }
+pub fn add_two(a: i32) -> i32 {
+    a + 2
+}
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -23,6 +26,10 @@ mod tests {
         };
         // Testing that a larger rectangle can hold a smaller rectangle, test will pass
         assert!(larger.can_hold(&smaller));
+    }
+    #[test]
+    fn it_adds_two() {
+        assert_eq!(6, add_two(4));
     }
     #[test]
     fn smaller_can_hold_larger() {
