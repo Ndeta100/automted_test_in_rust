@@ -14,11 +14,27 @@ pub fn add_two(a: i32) -> i32 {
 pub fn greeting(name: &str) -> String {
     format!("hello {:?}", name)
 }
+pub struct Guess {
+    value: i32,
+}
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("gues value must be between 1 and 100, got {}", value)
+        }
+        Guess { value }
+    }
+}
+#[test]
+#[should_panic]
+fn greater_than_100() {
+    Guess::new(200);
+}
 #[test]
 fn greeting_contains_name() {
     let results = greeting("Ndeta");
     assert!(
-        results.contains("Ndea"),
+        results.contains("Ndeta"),
         "greeting did not contain name, value was `{}`",
         results
     );
