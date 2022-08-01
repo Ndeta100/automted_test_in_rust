@@ -11,6 +11,14 @@ impl Rectangle {
 pub fn add_two(a: i32) -> i32 {
     a + 2
 }
+pub fn greeting(name: &str) -> String {
+    format!("hello {:?}", name)
+}
+#[test]
+fn greeting_contains_name() {
+    let results = greeting("Ndeta");
+    assert!(results.contains("Ndeta"));
+}
 #[cfg(test)]
 mod tests {
     use super::*;
